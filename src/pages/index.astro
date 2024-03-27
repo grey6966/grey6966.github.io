@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
-import { getCollection } from "astro:content";
+import {getCollection} from "astro:content";
 import createSlug from "../lib/createSlug"
 
 const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
@@ -10,69 +10,105 @@ const last_posts = posts.slice(0, 3);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
-  <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Manuel Ernesto</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
-    <div class="py-2">
-      <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS.
-        Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed. I hope you find
-        it useful!
-      </text>
+    <div class="pb-12 mt-5">
+        <div class="text-5xl py-1 text-pink-600">Hey there 👋</div>
+        <!--<div class="text-5xl font-bold">I'm Manuel Ernesto</div>
+        <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>-->
+        <div class="py-2">
+            <text class="text-3xl">
+                I'm <b> Grey </b>,a freelance tech enthusiast who loves exploring and is always open to new experiences. I'm easy-going and enjoy connecting with others.
+            </text>
+        </div>
+
+        <div class="ml-10 mt-2 flex flex-col">
+            <ul class="list-disc flex flex-col gap-2">
+                <li>🏘️I'm always at home, and most of the time, I'm in front of my computer.</li>
+                <li>🛥️Whenever I see others' profiles saying <b>"love to travel," </b> 🏕️ I always feel a bit guilty.</li>
+                <li>🧑‍💻 I don't dislike traveling; I just find coding more appealing. Yes, it may imply unhealthy habits. So, I found an outdoor activity for myself, which is <b>fishing</b>🎣.</li>
+                <li>🎣I love fishing, and whenever I'm outdoors, I'm always on the lookout for a good fishing spot.</li>
+                <!--独立思考的人-->
+                <li>🧠I'm an independent thinker and have my own opinions on many things, even in China.</li>
+                <!--我是一个Java 后端技术程序员，属性大数据相关开发-->
+                <li>👨‍💻I'm a Java backend technology programmer, and I'm also a big data-related developer.</li>
+                <!--另外我也喜欢探索除 Java 、 后端 之外的技术 js vue Astro Tailwind 等 -->
+                <li>🔍I also like to explore technologies other than Java and backend, such as <b>js</b>, <b>vue</b>, <b>Astro</b>, <b>Tailwind</b>, etc.</li>
+            </ul>
+        </div>
+
+
+        <div class="flex justify-start items-center pt-6 -ml-2 gap-1"><a href="https://twitter.com/real_kai42" target="_blank" class="mx-2" aria-label="X (Twitter)" title="X (Twitter)">
+            Twiter
+        </a><a href="https://github.com/RealKai42" target="_blank" class="mx-2" aria-label="Github" title="Github">
+            Github
+        </a><a href="./weChat.jpg" target="_blank" class="mx-2" aria-label="WeChat" title="WeChat">
+            WeChat
+        </a><a class="mx-2" href="mailto:me@kaiyi.cool" target="_blank" referrerpolicy="no-referrer-when-downgrade">
+            <svg class="text-lg" viewBox="0 0 432 384" width="1.2em" height="1.2em">
+                <path fill="currentColor" d="M384 21q18 0 30.5 12.5T427 64v256q0 18-12.5 30.5T384 363H43q-18 0-30.5-12.5T0 320V64q0-18 12.5-30.5T43 21zm0 86V64L213 171L43 64v43l170 106z"></path>
+            </svg>
+        </a><a href="/social-media" class="font-bold pl-2"> More</a></div>
+
+        <!-- 我目前正在寻求开发工作如果你有项目可以联系我-->
+
+
+        <!--<div class="mt-8">
+          <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
+          <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
+            Get This template
+          </a>
+        </div>-->
     </div>
-    <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
-      <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
-        Get This template
-      </a>
+
+    <div>
+        <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
     </div>
-  </div>
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
-  </div>
+    <HorizontalCard
+            title="Demo Project 1"
+            img="/post_img.webp"
+            desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            url="/blog/demo-post-1"
+            badge="NEW"
+    />
 
-  <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  />
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
-  </div>
+    <div class="divider my-0"></div>
 
-  {
-    last_posts.map((post) => (
-      <>
-        <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + createSlug(post.data.title, post.slug)}
-          target="_self"
-          badge={post.data.badge}
-        />
-        <div class="divider my-0" />
-      </>
-    ))
-  }
+
+    <!--     <HorizontalCard
+                 title="Demo Project 2"
+                 img="/post_img.webp"
+                 desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                 url="#"
+         />
+         <div class="divider my-0"></div>
+         <HorizontalCard
+                 title="Demo Project 3"
+                 img="/post_img.webp"
+                 desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                 url="#"
+                 badge="FOSS"
+         />-->
+
+    <!--
+        <div>
+            <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+        </div>
+    -->
+
+    {
+        last_posts.map((post) => (
+                <>
+                    <HorizontalCard
+                            title={post.data.title}
+                            img={post.data.heroImage}
+                            desc={post.data.description}
+                            url={"/blog/" + createSlug(post.data.title, post.slug)}
+                            target="_self"
+                            badge={post.data.badge}
+                    />
+                    <div class="divider my-0"/>
+                </>
+        ))
+    }
 </BaseLayout>
