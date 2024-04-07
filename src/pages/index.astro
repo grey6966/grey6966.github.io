@@ -6,7 +6,12 @@ import createSlug from "../lib/createSlug"
 
 const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
+const news = (await getCollection("blog", ({data}) => {
+    return data.badge && data.badge === "Featured"
+})).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
 const last_posts = posts.slice(0, 3);
+const new_posts = news.slice(0, 3);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
@@ -71,7 +76,6 @@ const last_posts = posts.slice(0, 3);
             </a>
         </div>
 
-
         <script>
             function showWechatPic() {
                 console.log("showWechatPic");
@@ -85,17 +89,35 @@ const last_posts = posts.slice(0, 3);
         <div class="text-3xl w-full font-bold mb-2">Featured post</div>
     </div>
 
-    <HorizontalCard
-            title="Demo Project 1"
-            img="/post_img.webp"
-            desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-            url="/blog/demo-post-1"
-            badge="NEW"
-    />
+    {
+        new_posts.map((post) => (
+                <>
+                    <HorizontalCard
+                            title={post.data.title}
+                            img={post.data.heroImage}
+                            desc={post.data.description}
+                            url={"/blog/" + createSlug(post.data.title, post.slug)}
+                            target="_self"
+                            badge={post.data.badge}
+                    />
+                    <div class="divider my-0"/>
+                </>
+        ))
+    }
+
+    <!-- <HorizontalCard
+             title="让你的Windows终端更好看"
+             img="/title/win-terminal.png"
+             desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+             url="/blog/让你的Windows终端更好看"
+             badge="NEW"
+     />-->
+
 
     <div>
         <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
     </div>
+
     {
         last_posts.map((post) => (
                 <>
@@ -111,4 +133,5 @@ const last_posts = posts.slice(0, 3);
                 </>
         ))
     }
+
 </BaseLayout>

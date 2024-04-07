@@ -3,6 +3,8 @@ title: "让你的Windows终端更好看"
 description: "之前使用Mac的时候感觉终端很好看，特别是iterm加上 oh my zsh 后，用这很舒服。最近换到windows，感觉终端实在是太丑了，网上介绍Windows终端没话的教程比较少，今天花了一天时间折腾了一下"
 pubDate: "Mar 07 2024"
 heroImage: "/title/win-terminal.png"
+badge: "Featured"
+tags: [ "美化","终端","Windows Terminal","oh my posh" ]
 ---
 
 ## 0. 背景
@@ -125,9 +127,8 @@ set-executionpolicy remotesigned
 在 profiles defaults 中设置默认字体:
 
 ```json
- "font":
 {
-"face": "MesloLGM Nerd Font"
+  "face": "MesloLGM Nerd Font"
 }
 ```
 
@@ -159,8 +160,8 @@ Get-PoshThemes
 oh-my-posh init pwsh --config 'C:\Users\jeeun\AppData\Local\Programs\oh-my-posh\themes\gmay.omp.json' | Invoke-Expression
 ```
 
-> 注意主题路径一定要替换成你自己的目录
->
+<font color=red>注意主题,因为主题文件是存放在用户目录下，所以路径一定要替换成你自己的目录</font>
+
 重启 windows terminal 可以看到，主题已经变成了 gmay
 ![](./../../../public/images/119075552385100.png)
 
