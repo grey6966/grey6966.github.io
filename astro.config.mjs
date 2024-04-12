@@ -7,5 +7,5 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
     site: 'https://grey6966.github.io',
     integrations: [mdx(), sitemap(), tailwind()],
-    /*  server: { port:  8080}*/
+    server: {port: 8080}
 });
