@@ -1,7 +1,7 @@
 ---
 title: "让你的Windows终端更好看"
 description: "之前使用Mac的时候感觉终端很好看，特别是iterm加上 oh my zsh 后，用这很舒服。最近换到windows，感觉终端实在是太丑了，网上介绍Windows终端没话的教程比较少，今天花了一天时间折腾了一下"
-pubDate: "Mar 07 2024"
+pubDate: "2024-03-07"
 heroImage: "/title/win-terminal.png"
 badge: "Featured"
 tags: [ "美化","终端","Windows Terminal","oh my posh" ]
