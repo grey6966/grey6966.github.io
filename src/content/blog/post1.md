@@ -1,5 +1,5 @@
 ---
-title: "📝 Alfred 进阶笔记：通过 Keyword 触发并获取选中文本（零剪贴板污染）"
+title: "Alfred 进阶笔记：通过 Keyword 触发并获取选中文本（零剪贴板污染）"
 description: "在 Alfred 工作流中，使用 Keyword（关键词）触发 Run Script，并在脚本中获取当前系统（其他软件）中选中的文本。"
 pubDate: "2026-09-30"
 heroImage: "/alfred-selection-hero.jpg"
